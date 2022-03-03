@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ASPNProject.Entities.Lecturer>
+
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                FirstName
+            </th>
+            <th>
+                LastName
+            </th>
+            <th>
+                Department
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Edit
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var lecturer in Model)
+        {
+            <tr>
+                <th>
+                    @lecturer.Id
+                </th>
+                <th>
+                    @lecturer.FirstName
+                </th>
+                <th>
+                    @lecturer.LastName
+                </th>
+                <th>
+                    @lecturer.Department.Name
+                </th>
+                <th>
+                    @lecturer.Email
+                </th>
+                <th>
+                    <a asp-action="UpdateDetails" asp-route-id="@lecturer.Id">Edit details</a>
+                </th>
+            </tr>
+        }
+        </tbody>
+    </table> 
+</div>
+<a asp-action = "Create">Add new Lecturer</a>

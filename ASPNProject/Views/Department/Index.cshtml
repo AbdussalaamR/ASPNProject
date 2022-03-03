@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ASPNProject.Entities.Department>
+
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                View Lecturers
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var dept in Model)
+        {
+            <tr>
+                <th>
+                    @dept.Id
+                </th>
+                <th>
+                    @dept.Name
+                </th>
+                <th>
+                    @dept.Description
+                </th>
+                <th>
+                    <a asp-action="ViewDeptLecturers" asp-route-id="@dept.Id">View</a>
+                </th>
+                <th>
+                    <a asp-action="UpdateDeptDetails" asp-route-id="@dept.Id">Edit details</a>
+                </th>
+                <th>
+                    <a asp-action="Delete" asp-route-id="@dept.Id" class="btn btn-danger">Remove Deartment</a>
+                </th>
+            </tr>
+        }
+        </tbody>
+    </table> 
+</div>
+<div>
+<a asp-action = "Create">Add new Department</a>
+</div>
+

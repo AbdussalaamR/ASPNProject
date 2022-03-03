@@ -1,0 +1,19 @@
+﻿@model ASPNProject.Entities.Department
+
+<div>
+    <form  asp-action="UpdateDeptDetails">
+        <div>
+            <label>
+                Name
+            </label>
+            <input type="text" name="Name" value="@Model.Name" required>
+            <label>
+                Description
+            </label>
+            <input type="text" name="Description" value="@Model.Description" required>
+        </div>
+        <div>
+             <input type="submit" value="Save changes" class="btn btn-primary" required/>
+        </div>
+    </form>  
+</div>

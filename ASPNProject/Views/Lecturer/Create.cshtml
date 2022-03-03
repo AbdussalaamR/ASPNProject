@@ -1,0 +1,31 @@
+﻿@model ASPNProject.Entities.Lecturer
+<div>
+    
+    <form asp-action="Create">
+        <div>
+            <label>
+                FirstName*
+            </label>
+            <input type="text" name="FirstName" required/>
+            <label>
+                LastName*
+            </label>
+            <input type="text" name="LastName" required/>
+            <label>
+                Age
+            </label>
+            <input type="number" name="Age"/>
+            <label>
+                Email
+            </label>
+            <input type="email" name="Email"/>
+            <label>
+                Department
+            </label>
+            <select asp-for="DepartmentId" asp-items="ViewBag.department"></select>
+        </div>
+        <div>  
+            <input type="submit" value="Submit"/>
+        </div>
+    </form>
+</div>

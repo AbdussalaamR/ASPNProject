@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ASPNProject.Entities.Lecturer>
+
+<div>
+      <table class="table">
+                     <thead>
+                      <tr>
+                          <th>
+                              Id
+                          </th>
+                          <th>
+                              FirstName
+                          </th>
+                          <th>
+                              LastName
+                          </th>
+                          <th>
+                              Email
+                          </th>
+                      </tr>
+                      </thead>
+                  <tbody>
+                  @foreach (var lecturer in Model)
+            {
+                <tr>
+                  <th>
+                      @lecturer.Id
+                  </th>
+                  <th>
+                      @lecturer.FirstName
+                  </th>
+                  <th>
+                      @lecturer.LastName
+                  </th>
+                  <th>
+                      @lecturer.Email
+                  </th>
+                  </tr>
+                  }
+                  </tbody>
+      </table>
+</div>
